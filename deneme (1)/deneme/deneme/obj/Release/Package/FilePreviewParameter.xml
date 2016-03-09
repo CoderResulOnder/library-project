@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="resulonder.tk" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-deneme-20141215074749.mdf;Initial Catalog=aspnet-deneme-20141215074749;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="libraryProjectEntities-Web.config Connection String" description="" value="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=e8rxpgc0oa.database.windows.net,1433;User ID=sql_injection&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='libraryProjectEntities']/@connectionString" />
+  </parameter>
+  <parameter name="libraryProjectEntities1-Web.config Connection String" description="" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=e8rxpgc0oa.database.windows.net,1433;initial catalog=libraryProject;persist security info=True;user id=sql_injection;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='libraryProjectEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="libraryProjectEntities2-Web.config Connection String" description="" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=e8rxpgc0oa.database.windows.net,1433;initial catalog=libraryProject;persist security info=True;user id=sql_injection;password='c:ebL@&quot;&quot;Vq)99M5@';MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\RESUL\ ONDER\\Documents\\Visual\ Studio\ 2013\\Projects\\Calisanproje\\deneme\\deneme\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='libraryProjectEntities2']/@connectionString" />
+  </parameter>
+</parameters>

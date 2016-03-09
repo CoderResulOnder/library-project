@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "gosteryeni";
+}
+
+<h2>ALL BOOKS</h2>
+
+<body style=" color:aqua;background-color:black ">
+
+    <div>
+        @model IEnumerable<deneme.Models.author>
+
+        @foreach (var item in Model)
+        {
+            int sayac = item.book.Count;
+            <p>The number of books of the author:@sayac</p>
+            for (int i = 0; i < sayac; i++)
+            {
+                int j = i + 1;
+                <table>
+
+                    <tr><td>
+                            <h3> @j . book information</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            book name:
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).name)
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            page information:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).pageInformation)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            publishing house name:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).publishingHouse.name)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            library name:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).library.name)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            number information:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).numberInformation)
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            catagory name
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).category.ElementAtOrDefault<deneme.Models.category>(0).name)
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            floor number
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).bookLocation.ElementAtOrDefault<deneme.Models.bookLocation>(0).floorNumber)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            hall number
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).bookLocation.ElementAtOrDefault<deneme.Models.bookLocation>(0).hallNumber)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            queue number
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).bookLocation.ElementAtOrDefault<deneme.Models.bookLocation>(0).queueNumber)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            shelf number
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.book.ElementAtOrDefault<deneme.Models.book>(i).bookLocation.ElementAtOrDefault<deneme.Models.bookLocation>(0).shelfNumber)
+
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            ******************************************
+                        </td>
+                    </tr>
+                </table>
+            }
+        }
+
+
+    </div>
+</body>

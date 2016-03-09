@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "memberbookyeni";
+}
+@model IEnumerable<deneme.Models.member>
+<h2>Registered members on book information</h2>
+<body style="background-color:black;color:aqua">
+    @foreach (var item in Model)
+    {
+        int count = item.trustGet.Count;
+        int j;
+        <p>
+          The total number of books received deposit:&nbsp;@count
+        </p>
+        for (int i = 0; i < count; i++)
+        {
+            j = i + 1;
+               <h3>@j . books</h3>
+
+                <table border="1" style="color:aqua">
+                    <tr>
+                        <th>
+                            Registered members on ordinary book name
+                        </th>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).book.name)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+
+                            Registered members on ordinary book publishing house name
+                        </th>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).book.publishingHouse.name)
+
+
+                        </td>
+                        </tr>
+                        <tr>
+                        <th>
+
+                            Registered members on ordinary book author name
+                        </th>
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).book.author.ElementAtOrDefault<deneme.Models.author>(0).name)&nbsp;
+                                @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).book.author.ElementAtOrDefault<deneme.Models.author>(0).surname)
+
+
+                            </td>
+    </tr>
+    <tr>
+                        <th>
+
+                            Registered members on ordinary book comment
+                        </th>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).comment)
+
+
+        </td>
+        </tr>
+        <tr>
+
+
+                            <th>
+
+                            Registered members on ordinary book getdate
+                        </th>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).getDate)
+
+
+            </td>
+</tr>
+                    <tr>
+                        <th>
+
+                            Registered members on ordinary book returndate
+                        </th>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).returnDate)
+
+
+                        </td>
+                        </tr>
+                    <tr>
+                        <th>
+
+                            Registered members on ordinary book category name
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).book.category.ElementAtOrDefault<deneme.Models.category>(0).name)
+                        </td>
+                        </tr>
+                    <tr>
+
+                        <th>
+
+                            Registered members on ordinary book dept
+                        </th>
+          
+                        <td>
+                            @Html.DisplayFor(modelItem => item.trustGet.ElementAtOrDefault<deneme.Models.trustGet>(i).dept)
+
+                        </td>
+                    </tr>
+                </table>
+                }
+               
+                }
+
+</body>

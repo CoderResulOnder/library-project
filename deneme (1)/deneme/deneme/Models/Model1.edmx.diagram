@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18e4fda13fec4957b10404c03fa6b7ff" Name="Diagram1">
+        <EntityTypeShape EntityType="libraryProjectModel.address" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.author" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.book" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.bookLocation" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.category" Width="1.5" PointX="7.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.employee" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.library" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.member" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.publishingHouse" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.register" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryProjectModel.trustGet" Width="1.5" PointX="7.5" PointY="18.625" IsExpanded="true" />
+        <AssociationConnector Association="libraryProjectModel.FK_author_address" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_employee_address" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_library_address" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_member_address" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_publishingHouse_address" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_book_library" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_book_publishingHouse" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_bookLocation_book" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_trustGet_book" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_employee_library" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_register_library" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_register_member" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.FK_trustGet_member" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.toBe" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryProjectModel.write" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

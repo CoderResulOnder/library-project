@@ -1,0 +1,66 @@
+﻿@model deneme.Models.address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.doorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doorNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quarter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quarter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.district)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.district)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.aId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<deneme.Models.book>
+<body style=" color :aqua;background-color:black">
+    
+    
+       <table class="table" style=" border:hidden;color:white">
+        <tr>
+      
+   
+        </tr>
+        <tr style="color:aqua">
+            <th>
+                @Html.DisplayNameFor(model => model.isbn)
+            </th>
+            <th>
+                <p>
+                    Book
+                    @Html.DisplayNameFor(model => model.name)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.numberInformation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pageInformation)
+            </th>
+            <th>
+                <p>
+                    Library
+                    @Html.DisplayNameFor(model => model.library.name)
+                </p>
+            </th>
+            <th>
+                <p>
+                    Publishing House
+                    @Html.DisplayNameFor(model => model.publishingHouse.name)
+                </p>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isbn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numberInformation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pageInformation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.library.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.publishingHouse.name)
+                </td>
+                
+
+            </tr>
+        }
+
+    </table>
+</body>

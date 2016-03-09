@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "memberyeni";
+}
+
+<h2>Member Operations</h2>
+<div>
+
+    @using (Html.BeginForm("goster", "member", FormMethod.Post))
+    {
+
+
+        <table border="1" align="center">
+            <tr>
+                <td class="lbl">
+                    members name :
+                </td>
+                <td>
+                    @Html.TextBox("ad")
+                </td>
+            </tr>
+            <tr>
+                <td class="lbl">
+                    members parola :
+                </td>
+                <td>
+                    @Html.TextBox("parola")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Send" />
+                </td>
+                <td>
+                    @Html.ActionLink("Cancel", "member1", "member")
+
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+
+

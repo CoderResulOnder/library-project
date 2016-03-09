@@ -1,0 +1,66 @@
+﻿@model deneme.Models.trustGet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>trustGet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.getDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.getDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.returnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.returnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dept)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dept)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.book.isbn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book.isbn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member.tc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member.tc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

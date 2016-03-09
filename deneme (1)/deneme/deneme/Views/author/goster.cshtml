@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body style=" color:aqua;background-color:black ">
+
+    <div>
+        @model IEnumerable<deneme.Models.author>
+        
+        @foreach (var item in Model)
+        {
+          
+            
+            <p>@item.name</p>
+            <p>:@item.surname </p>
+            <p>@item.authorAboutInformation</p>
+            <p>@item.address</p>
+        }
+       
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryProjectModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="aId" />
+    </Key>
+    <Property Name="aId" Type="int" Nullable="false" />
+    <Property Name="doorNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="quartere" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="district" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="postCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="tc" />
+    </Key>
+    <Property Name="tc" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="authorAboutInformation" Type="nvarchar" MaxLength="50" />
+    <Property Name="addressNo" Type="int" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="barcodeNo" />
+    </Key>
+    <Property Name="barcodeNo" Type="int" Nullable="false" />
+    <Property Name="isbn" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="numberInformation" Type="nvarchar" MaxLength="50" />
+    <Property Name="pageInformation" Type="nvarchar" MaxLength="50" />
+    <Property Name="libraryNo" Type="int" />
+    <Property Name="publishingHouseNo" Type="int" />
+  </EntityType>
+  <EntityType Name="bookLocation">
+    <Key>
+      <PropertyRef Name="barcodeNo" />
+      <PropertyRef Name="floorNumber" />
+    </Key>
+    <Property Name="barcodeNo" Type="int" Nullable="false" />
+    <Property Name="floorNumber" Type="int" Nullable="false" />
+    <Property Name="hallNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="shelfNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="queueNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="explanation" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="tc" />
+    </Key>
+    <Property Name="tc" Type="int" Nullable="false" />
+    <Property Name="employeNo" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="job" Type="nvarchar" MaxLength="50" />
+    <Property Name="jobToBeginDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="addresNo" Type="int" />
+    <Property Name="kuNo" Type="int" />
+  </EntityType>
+  <EntityType Name="library">
+    <Key>
+      <PropertyRef Name="kuId" />
+    </Key>
+    <Property Name="kuId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="constructionDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="workTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="addresNo" Type="int" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="memberNo" />
+    </Key>
+    <Property Name="memberNo" Type="int" Nullable="false" />
+    <Property Name="tc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="job" Type="nvarchar" MaxLength="50" />
+    <Property Name="telephoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="addressNo" Type="int" />
+  </EntityType>
+  <EntityType Name="publishingHouse">
+    <Key>
+      <PropertyRef Name="pId" />
+    </Key>
+    <Property Name="pId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addressNo" Type="int" />
+  </EntityType>
+  <EntityType Name="register">
+    <Key>
+      <PropertyRef Name="kuId" />
+      <PropertyRef Name="memberNo" />
+    </Key>
+    <Property Name="kuId" Type="int" Nullable="false" />
+    <Property Name="memberNo" Type="int" Nullable="false" />
+    <Property Name="memberRegisterDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="registerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="toBe">
+    <Key>
+      <PropertyRef Name="book_barcodeNo" />
+      <PropertyRef Name="category_categoryId" />
+    </Key>
+    <Property Name="book_barcodeNo" Type="int" Nullable="false" />
+    <Property Name="category_categoryId" Type="int" Nullable="false" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="trustGet">
+    <Key>
+      <PropertyRef Name="trustId" />
+    </Key>
+    <Property Name="memberNo" Type="int" Nullable="false" />
+    <Property Name="barcodeNo" Type="int" Nullable="false" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" />
+    <Property Name="getDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="returnDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="dept" Type="nvarchar" MaxLength="50" />
+    <Property Name="trustId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="write">
+    <Key>
+      <PropertyRef Name="author_tc" />
+      <PropertyRef Name="book_barcodeNo" />
+    </Key>
+    <Property Name="author_tc" Type="int" Nullable="false" />
+    <Property Name="book_barcodeNo" Type="int" Nullable="false" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_author_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="author" Type="Self.author" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="author">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_book_library">
+    <End Role="library" Type="Self.library" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="libraryNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_book_publishingHouse">
+    <End Role="publishingHouse" Type="Self.publishingHouse" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="publishingHouse">
+        <PropertyRef Name="pId" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="publishingHouseNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bookLocation_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="bookLocation" Type="Self.bookLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="bookLocation">
+        <PropertyRef Name="barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="addresNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_library">
+    <End Role="library" Type="Self.library" Multiplicity="0..1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="kuNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_library_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="library" Type="Self.library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="library">
+        <PropertyRef Name="addresNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_member_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="member" Type="Self.member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="member">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_publishingHouse_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="publishingHouse" Type="Self.publishingHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="publishingHouse">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_library">
+    <End Role="library" Type="Self.library" Multiplicity="1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="kuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_member">
+    <End Role="member" Type="Self.member" Multiplicity="1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="member">
+        <PropertyRef Name="memberNo" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="memberNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_toBe_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="toBe" Type="Self.toBe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="toBe">
+        <PropertyRef Name="book_barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_toBe_category">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="toBe" Type="Self.toBe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="toBe">
+        <PropertyRef Name="category_categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trustGet_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="trustGet" Type="Self.trustGet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="trustGet">
+        <PropertyRef Name="barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trustGet_member">
+    <End Role="member" Type="Self.member" Multiplicity="1" />
+    <End Role="trustGet" Type="Self.trustGet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="member">
+        <PropertyRef Name="memberNo" />
+      </Principal>
+      <Dependent Role="trustGet">
+        <PropertyRef Name="memberNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_write_author">
+    <End Role="author" Type="Self.author" Multiplicity="1" />
+    <End Role="write" Type="Self.write" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="author">
+        <PropertyRef Name="tc" />
+      </Principal>
+      <Dependent Role="write">
+        <PropertyRef Name="author_tc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_write_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="write" Type="Self.write" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="write">
+        <PropertyRef Name="book_barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="libraryProjectModel1StoreContainer">
+    <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="author" EntityType="Self.author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bookLocation" EntityType="Self.bookLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="library" EntityType="Self.library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="publishingHouse" EntityType="Self.publishingHouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="register" EntityType="Self.register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="toBe" EntityType="Self.toBe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trustGet" EntityType="Self.trustGet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="write" EntityType="Self.write" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_author_address" Association="Self.FK_author_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="author" EntitySet="author" />
+    </AssociationSet>
+    <AssociationSet Name="FK_book_library" Association="Self.FK_book_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_book_publishingHouse" Association="Self.FK_book_publishingHouse">
+      <End Role="publishingHouse" EntitySet="publishingHouse" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bookLocation_book" Association="Self.FK_bookLocation_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="bookLocation" EntitySet="bookLocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_address" Association="Self.FK_employee_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_library" Association="Self.FK_employee_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_library_address" Association="Self.FK_library_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="library" EntitySet="library" />
+    </AssociationSet>
+    <AssociationSet Name="FK_member_address" Association="Self.FK_member_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="member" EntitySet="member" />
+    </AssociationSet>
+    <AssociationSet Name="FK_publishingHouse_address" Association="Self.FK_publishingHouse_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="publishingHouse" EntitySet="publishingHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_library" Association="Self.FK_register_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_member" Association="Self.FK_register_member">
+      <End Role="member" EntitySet="member" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_toBe_book" Association="Self.FK_toBe_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="toBe" EntitySet="toBe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_toBe_category" Association="Self.FK_toBe_category">
+      <End Role="category" EntitySet="category" />
+      <End Role="toBe" EntitySet="toBe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trustGet_book" Association="Self.FK_trustGet_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="trustGet" EntitySet="trustGet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trustGet_member" Association="Self.FK_trustGet_member">
+      <End Role="member" EntitySet="member" />
+      <End Role="trustGet" EntitySet="trustGet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_write_author" Association="Self.FK_write_author">
+      <End Role="author" EntitySet="author" />
+      <End Role="write" EntitySet="write" />
+    </AssociationSet>
+    <AssociationSet Name="FK_write_book" Association="Self.FK_write_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="write" EntitySet="write" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

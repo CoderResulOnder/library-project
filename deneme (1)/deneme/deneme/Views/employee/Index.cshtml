@@ -1,0 +1,81 @@
+﻿@model IEnumerable<deneme.Models.employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <p style="margin-left:1000px">
+        @Html.ActionLink("Create New Personal", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.employeNo)
+            </th>
+            <th>
+                <p>
+                    Employe
+                    @Html.DisplayNameFor(model => model.name)
+                </p>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobToBeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address.doorNumber)
+            </th>
+            <th>
+                <p>
+                    Library
+                    @Html.DisplayNameFor(model => model.library.name)
+                </p>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.employeNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.job)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jobToBeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address.doorNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.library.name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.tc }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.tc }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.tc })
+                </td>
+            </tr>
+        }
+
+    </table>

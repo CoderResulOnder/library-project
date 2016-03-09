@@ -1,0 +1,50 @@
+﻿@model deneme.Models.bookLocation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>bookLocation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hallNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hallNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shelfNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shelfNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.queueNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.queueNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.book.isbn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book.isbn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

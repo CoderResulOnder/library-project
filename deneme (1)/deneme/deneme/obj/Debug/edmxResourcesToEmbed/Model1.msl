@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="libraryProjectModel1StoreContainer" CdmEntityContainer="libraryProjectEntities2">
+    <EntitySetMapping Name="address">
+      <EntityTypeMapping TypeName="libraryProjectModel1.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="aId" ColumnName="aId" />
+          <ScalarProperty Name="doorNumber" ColumnName="doorNumber" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="quartere" ColumnName="quartere" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="postCode" ColumnName="postCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="author">
+      <EntityTypeMapping TypeName="libraryProjectModel1.author">
+        <MappingFragment StoreEntitySet="author">
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="authorAboutInformation" ColumnName="authorAboutInformation" />
+          <ScalarProperty Name="addressNo" ColumnName="addressNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="book">
+      <EntityTypeMapping TypeName="libraryProjectModel1.book">
+        <MappingFragment StoreEntitySet="book">
+          <ScalarProperty Name="barcodeNo" ColumnName="barcodeNo" />
+          <ScalarProperty Name="isbn" ColumnName="isbn" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="numberInformation" ColumnName="numberInformation" />
+          <ScalarProperty Name="pageInformation" ColumnName="pageInformation" />
+          <ScalarProperty Name="libraryNo" ColumnName="libraryNo" />
+          <ScalarProperty Name="publishingHouseNo" ColumnName="publishingHouseNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookLocation">
+      <EntityTypeMapping TypeName="libraryProjectModel1.bookLocation">
+        <MappingFragment StoreEntitySet="bookLocation">
+          <ScalarProperty Name="barcodeNo" ColumnName="barcodeNo" />
+          <ScalarProperty Name="floorNumber" ColumnName="floorNumber" />
+          <ScalarProperty Name="hallNumber" ColumnName="hallNumber" />
+          <ScalarProperty Name="shelfNumber" ColumnName="shelfNumber" />
+          <ScalarProperty Name="queueNumber" ColumnName="queueNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="libraryProjectModel1.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="explanation" ColumnName="explanation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="libraryProjectModel1.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="employeNo" ColumnName="employeNo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="jobToBeginDate" ColumnName="jobToBeginDate" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="addresNo" ColumnName="addresNo" />
+          <ScalarProperty Name="kuNo" ColumnName="kuNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="library">
+      <EntityTypeMapping TypeName="libraryProjectModel1.library">
+        <MappingFragment StoreEntitySet="library">
+          <ScalarProperty Name="kuId" ColumnName="kuId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="constructionDate" ColumnName="constructionDate" />
+          <ScalarProperty Name="workTime" ColumnName="workTime" />
+          <ScalarProperty Name="addresNo" ColumnName="addresNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="member">
+      <EntityTypeMapping TypeName="libraryProjectModel1.member">
+        <MappingFragment StoreEntitySet="member">
+          <ScalarProperty Name="memberNo" ColumnName="memberNo" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="telephoneNumber" ColumnName="telephoneNumber" />
+          <ScalarProperty Name="mailAddress" ColumnName="mailAddress" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="addressNo" ColumnName="addressNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publishingHouse">
+      <EntityTypeMapping TypeName="libraryProjectModel1.publishingHouse">
+        <MappingFragment StoreEntitySet="publishingHouse">
+          <ScalarProperty Name="pId" ColumnName="pId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="addressNo" ColumnName="addressNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="register">
+      <EntityTypeMapping TypeName="libraryProjectModel1.register">
+        <MappingFragment StoreEntitySet="register">
+          <ScalarProperty Name="kuId" ColumnName="kuId" />
+          <ScalarProperty Name="memberNo" ColumnName="memberNo" />
+          <ScalarProperty Name="memberRegisterDate" ColumnName="memberRegisterDate" />
+          <ScalarProperty Name="registerId" ColumnName="registerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="toBe">
+      <EntityTypeMapping TypeName="libraryProjectModel1.toBe">
+        <MappingFragment StoreEntitySet="toBe">
+          <ScalarProperty Name="book_barcodeNo" ColumnName="book_barcodeNo" />
+          <ScalarProperty Name="category_categoryId" ColumnName="category_categoryId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trustGet">
+      <EntityTypeMapping TypeName="libraryProjectModel1.trustGet">
+        <MappingFragment StoreEntitySet="trustGet">
+          <ScalarProperty Name="memberNo" ColumnName="memberNo" />
+          <ScalarProperty Name="barcodeNo" ColumnName="barcodeNo" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="getDate" ColumnName="getDate" />
+          <ScalarProperty Name="returnDate" ColumnName="returnDate" />
+          <ScalarProperty Name="dept" ColumnName="dept" />
+          <ScalarProperty Name="trustId" ColumnName="trustId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="write">
+      <EntityTypeMapping TypeName="libraryProjectModel1.write">
+        <MappingFragment StoreEntitySet="write">
+          <ScalarProperty Name="author_tc" ColumnName="author_tc" />
+          <ScalarProperty Name="book_barcodeNo" ColumnName="book_barcodeNo" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

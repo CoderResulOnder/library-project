@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "categoryAra";
+}
+<body style="background-color:black">
+    <h2 style="color:aqua">categoryAra</h2>
+    @Html.BeginForm("categoryArabul", "category", FormMethod.Post)
+    {
+    <table border="0" align="center">
+        <tr>
+            <td class="lbl">
+                CAtegory Name
+            </td>
+            <td>
+                @Html.TextBox("categoryAdi")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value=" Yayin Evi Bilgisi Göster" />
+            </td>
+            <td>
+                @Html.ActionLink("İptal", "gecis", "book")
+
+
+            </td>
+        </tr>
+    </table>
+    }
+
+</body>

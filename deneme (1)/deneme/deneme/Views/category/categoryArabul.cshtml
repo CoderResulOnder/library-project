@@ -1,0 +1,13 @@
+﻿@model IEnumerable<deneme.Models.category>
+@{
+    ViewBag.Title = "categoryArabul";
+}
+
+<h2>categoryArabul</h2>
+@foreach (var item in Model)
+{
+    <p>@item.book</p>
+    <p>@item.explanation</p>
+    <p>@item.name</p>
+    
+}

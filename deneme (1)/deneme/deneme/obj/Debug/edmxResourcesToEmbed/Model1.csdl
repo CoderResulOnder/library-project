@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryProjectModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="aId" />
+    </Key>
+    <Property Name="aId" Type="Int32" Nullable="false" />
+    <Property Name="doorNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quartere" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="author" Relationship="Self.FK_author_address" FromRole="address" ToRole="author" />
+    <NavigationProperty Name="employee" Relationship="Self.FK_employee_address" FromRole="address" ToRole="employee" />
+    <NavigationProperty Name="library" Relationship="Self.FK_library_address" FromRole="address" ToRole="library" />
+    <NavigationProperty Name="member" Relationship="Self.FK_member_address" FromRole="address" ToRole="member" />
+    <NavigationProperty Name="publishingHouse" Relationship="Self.FK_publishingHouse_address" FromRole="address" ToRole="publishingHouse" />
+  </EntityType>
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="tc" />
+    </Key>
+    <Property Name="tc" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="authorAboutInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addressNo" Type="Int32" />
+    <NavigationProperty Name="address" Relationship="Self.FK_author_address" FromRole="author" ToRole="address" />
+    <NavigationProperty Name="write" Relationship="Self.FK_write_author" FromRole="author" ToRole="write" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="barcodeNo" />
+    </Key>
+    <Property Name="barcodeNo" Type="Int32" Nullable="false" />
+    <Property Name="isbn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numberInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pageInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="libraryNo" Type="Int32" />
+    <Property Name="publishingHouseNo" Type="Int32" />
+    <NavigationProperty Name="library" Relationship="Self.FK_book_library" FromRole="book" ToRole="library" />
+    <NavigationProperty Name="publishingHouse" Relationship="Self.FK_book_publishingHouse" FromRole="book" ToRole="publishingHouse" />
+    <NavigationProperty Name="bookLocation" Relationship="Self.FK_bookLocation_book" FromRole="book" ToRole="bookLocation" />
+    <NavigationProperty Name="toBe" Relationship="Self.FK_toBe_book" FromRole="book" ToRole="toBe" />
+    <NavigationProperty Name="trustGet" Relationship="Self.FK_trustGet_book" FromRole="book" ToRole="trustGet" />
+    <NavigationProperty Name="write" Relationship="Self.FK_write_book" FromRole="book" ToRole="write" />
+  </EntityType>
+  <EntityType Name="bookLocation">
+    <Key>
+      <PropertyRef Name="barcodeNo" />
+      <PropertyRef Name="floorNumber" />
+    </Key>
+    <Property Name="barcodeNo" Type="Int32" Nullable="false" />
+    <Property Name="floorNumber" Type="Int32" Nullable="false" />
+    <Property Name="hallNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shelfNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="queueNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="book" Relationship="Self.FK_bookLocation_book" FromRole="bookLocation" ToRole="book" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="explanation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="toBe" Relationship="Self.FK_toBe_category" FromRole="category" ToRole="toBe" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="tc" />
+    </Key>
+    <Property Name="tc" Type="Int32" Nullable="false" />
+    <Property Name="employeNo" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="jobToBeginDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addresNo" Type="Int32" />
+    <Property Name="kuNo" Type="Int32" />
+    <NavigationProperty Name="address" Relationship="Self.FK_employee_address" FromRole="employee" ToRole="address" />
+    <NavigationProperty Name="library" Relationship="Self.FK_employee_library" FromRole="employee" ToRole="library" />
+  </EntityType>
+  <EntityType Name="library">
+    <Key>
+      <PropertyRef Name="kuId" />
+    </Key>
+    <Property Name="kuId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="constructionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="workTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addresNo" Type="Int32" />
+    <NavigationProperty Name="address" Relationship="Self.FK_library_address" FromRole="library" ToRole="address" />
+    <NavigationProperty Name="book" Relationship="Self.FK_book_library" FromRole="library" ToRole="book" />
+    <NavigationProperty Name="employee" Relationship="Self.FK_employee_library" FromRole="library" ToRole="employee" />
+    <NavigationProperty Name="register" Relationship="Self.FK_register_library" FromRole="library" ToRole="register" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="memberNo" />
+    </Key>
+    <Property Name="memberNo" Type="Int32" Nullable="false" />
+    <Property Name="tc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addressNo" Type="Int32" />
+    <NavigationProperty Name="address" Relationship="Self.FK_member_address" FromRole="member" ToRole="address" />
+    <NavigationProperty Name="register" Relationship="Self.FK_register_member" FromRole="member" ToRole="register" />
+    <NavigationProperty Name="trustGet" Relationship="Self.FK_trustGet_member" FromRole="member" ToRole="trustGet" />
+  </EntityType>
+  <EntityType Name="publishingHouse">
+    <Key>
+      <PropertyRef Name="pId" />
+    </Key>
+    <Property Name="pId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addressNo" Type="Int32" />
+    <NavigationProperty Name="address" Relationship="Self.FK_publishingHouse_address" FromRole="publishingHouse" ToRole="address" />
+    <NavigationProperty Name="book" Relationship="Self.FK_book_publishingHouse" FromRole="publishingHouse" ToRole="book" />
+  </EntityType>
+  <EntityType Name="register">
+    <Key>
+      <PropertyRef Name="kuId" />
+      <PropertyRef Name="memberNo" />
+    </Key>
+    <Property Name="kuId" Type="Int32" Nullable="false" />
+    <Property Name="memberNo" Type="Int32" Nullable="false" />
+    <Property Name="memberRegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="registerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="library" Relationship="Self.FK_register_library" FromRole="register" ToRole="library" />
+    <NavigationProperty Name="member" Relationship="Self.FK_register_member" FromRole="register" ToRole="member" />
+  </EntityType>
+  <EntityType Name="toBe">
+    <Key>
+      <PropertyRef Name="book_barcodeNo" />
+      <PropertyRef Name="category_categoryId" />
+    </Key>
+    <Property Name="book_barcodeNo" Type="Int32" Nullable="false" />
+    <Property Name="category_categoryId" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="book" Relationship="Self.FK_toBe_book" FromRole="toBe" ToRole="book" />
+    <NavigationProperty Name="category" Relationship="Self.FK_toBe_category" FromRole="toBe" ToRole="category" />
+  </EntityType>
+  <EntityType Name="trustGet">
+    <Key>
+      <PropertyRef Name="trustId" />
+    </Key>
+    <Property Name="memberNo" Type="Int32" Nullable="false" />
+    <Property Name="barcodeNo" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="getDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="returnDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trustId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="book" Relationship="Self.FK_trustGet_book" FromRole="trustGet" ToRole="book" />
+    <NavigationProperty Name="member" Relationship="Self.FK_trustGet_member" FromRole="trustGet" ToRole="member" />
+  </EntityType>
+  <EntityType Name="write">
+    <Key>
+      <PropertyRef Name="author_tc" />
+      <PropertyRef Name="book_barcodeNo" />
+    </Key>
+    <Property Name="author_tc" Type="Int32" Nullable="false" />
+    <Property Name="book_barcodeNo" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="author" Relationship="Self.FK_write_author" FromRole="write" ToRole="author" />
+    <NavigationProperty Name="book" Relationship="Self.FK_write_book" FromRole="write" ToRole="book" />
+  </EntityType>
+  <Association Name="FK_author_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="author" Type="Self.author" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="author">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="addresNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_library_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="library" Type="Self.library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="library">
+        <PropertyRef Name="addresNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_member_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="member" Type="Self.member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="member">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_publishingHouse_address">
+    <End Role="address" Type="Self.address" Multiplicity="0..1" />
+    <End Role="publishingHouse" Type="Self.publishingHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="aId" />
+      </Principal>
+      <Dependent Role="publishingHouse">
+        <PropertyRef Name="addressNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_write_author">
+    <End Role="author" Type="Self.author" Multiplicity="1" />
+    <End Role="write" Type="Self.write" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="author">
+        <PropertyRef Name="tc" />
+      </Principal>
+      <Dependent Role="write">
+        <PropertyRef Name="author_tc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_book_library">
+    <End Role="library" Type="Self.library" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="libraryNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_book_publishingHouse">
+    <End Role="publishingHouse" Type="Self.publishingHouse" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="publishingHouse">
+        <PropertyRef Name="pId" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="publishingHouseNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bookLocation_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="bookLocation" Type="Self.bookLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="bookLocation">
+        <PropertyRef Name="barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_toBe_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="toBe" Type="Self.toBe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="toBe">
+        <PropertyRef Name="book_barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trustGet_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="trustGet" Type="Self.trustGet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="trustGet">
+        <PropertyRef Name="barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_write_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="write" Type="Self.write" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="barcodeNo" />
+      </Principal>
+      <Dependent Role="write">
+        <PropertyRef Name="book_barcodeNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_toBe_category">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="toBe" Type="Self.toBe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="toBe">
+        <PropertyRef Name="category_categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_library">
+    <End Role="library" Type="Self.library" Multiplicity="0..1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="kuNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_library">
+    <End Role="library" Type="Self.library" Multiplicity="1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="library">
+        <PropertyRef Name="kuId" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="kuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_member">
+    <End Role="member" Type="Self.member" Multiplicity="1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="member">
+        <PropertyRef Name="memberNo" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="memberNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trustGet_member">
+    <End Role="member" Type="Self.member" Multiplicity="1" />
+    <End Role="trustGet" Type="Self.trustGet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="member">
+        <PropertyRef Name="memberNo" />
+      </Principal>
+      <Dependent Role="trustGet">
+        <PropertyRef Name="memberNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="libraryProjectEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="address" EntityType="Self.address" />
+    <EntitySet Name="author" EntityType="Self.author" />
+    <EntitySet Name="book" EntityType="Self.book" />
+    <EntitySet Name="bookLocation" EntityType="Self.bookLocation" />
+    <EntitySet Name="category" EntityType="Self.category" />
+    <EntitySet Name="employee" EntityType="Self.employee" />
+    <EntitySet Name="library" EntityType="Self.library" />
+    <EntitySet Name="member" EntityType="Self.member" />
+    <EntitySet Name="publishingHouse" EntityType="Self.publishingHouse" />
+    <EntitySet Name="register" EntityType="Self.register" />
+    <EntitySet Name="toBe" EntityType="Self.toBe" />
+    <EntitySet Name="trustGet" EntityType="Self.trustGet" />
+    <EntitySet Name="write" EntityType="Self.write" />
+    <AssociationSet Name="FK_author_address" Association="Self.FK_author_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="author" EntitySet="author" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_address" Association="Self.FK_employee_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_library_address" Association="Self.FK_library_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="library" EntitySet="library" />
+    </AssociationSet>
+    <AssociationSet Name="FK_member_address" Association="Self.FK_member_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="member" EntitySet="member" />
+    </AssociationSet>
+    <AssociationSet Name="FK_publishingHouse_address" Association="Self.FK_publishingHouse_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="publishingHouse" EntitySet="publishingHouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_write_author" Association="Self.FK_write_author">
+      <End Role="author" EntitySet="author" />
+      <End Role="write" EntitySet="write" />
+    </AssociationSet>
+    <AssociationSet Name="FK_book_library" Association="Self.FK_book_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_book_publishingHouse" Association="Self.FK_book_publishingHouse">
+      <End Role="publishingHouse" EntitySet="publishingHouse" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bookLocation_book" Association="Self.FK_bookLocation_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="bookLocation" EntitySet="bookLocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_toBe_book" Association="Self.FK_toBe_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="toBe" EntitySet="toBe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trustGet_book" Association="Self.FK_trustGet_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="trustGet" EntitySet="trustGet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_write_book" Association="Self.FK_write_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="write" EntitySet="write" />
+    </AssociationSet>
+    <AssociationSet Name="FK_toBe_category" Association="Self.FK_toBe_category">
+      <End Role="category" EntitySet="category" />
+      <End Role="toBe" EntitySet="toBe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_library" Association="Self.FK_employee_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_library" Association="Self.FK_register_library">
+      <End Role="library" EntitySet="library" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_member" Association="Self.FK_register_member">
+      <End Role="member" EntitySet="member" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trustGet_member" Association="Self.FK_trustGet_member">
+      <End Role="member" EntitySet="member" />
+      <End Role="trustGet" EntitySet="trustGet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

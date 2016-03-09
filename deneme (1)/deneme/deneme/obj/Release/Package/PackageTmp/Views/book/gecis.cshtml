@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "gecis";
+}
+
+<h2>Searc Page</h2>
+
+<body style="color:aqua;background-color:black">
+    <table border="0" align="center" style="margin-top:500">
+        <tr>
+            <td>
+                @Html.ActionLink("Search by book name", "kitapAra", "book")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("search by author information", "yazarKitap", "author")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("search by category information", "categoryKitap", "category")
+            </td>
+        </tr>
+    </table>
+
+</body>

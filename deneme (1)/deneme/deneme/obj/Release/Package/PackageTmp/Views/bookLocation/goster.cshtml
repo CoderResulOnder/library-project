@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body style="background-color:black">
+    <div>
+
+
+        @model IEnumerable<deneme.Models.bookLocation>
+        @foreach (var item in Model)
+        {
+            <table border="1" align="center"  style="font-size:20px;border-color:blue;color:aqua;background-color:blue" >
+                <tr>
+                    <td>Floor Number</td>
+                    <td>@item.floorNumber</td>
+                </tr>
+                <tr>
+                    <td>Hall Number</td>
+                    <td>@item.hallNumber</td>
+                </tr>
+                <tr>
+                    <td>Queue Number</td>
+                    <td>@item.queueNumber</td>
+                </tr>
+                <tr>
+                    <td>Shel Number</td>
+                    <td>@item.shelfNumber</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("İptal", "gecis", "book")
+                    </td>
+
+                </tr>
+   
+            </table>
+            
+        }
+
+    
+    </div>
+</body>
+</html>

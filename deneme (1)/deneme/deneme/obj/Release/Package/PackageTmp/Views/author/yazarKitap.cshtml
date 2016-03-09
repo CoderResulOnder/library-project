@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "yazarKitap";
+}
+
+<h2>search by author information</h2>
+
+<body style=" color:white;background-color:black;" class="a">
+    <h2 style="font-size:25px;color:aqua">Book Search</h2>
+
+    <div>
+
+        @using (Html.BeginForm("gosteryeni", "author", FormMethod.Post))
+        {
+
+
+            <table border="1" align="center">
+                <tr>
+                    <td class="lbl">
+                        enter name to search for authors :
+                    </td>
+                    <td>
+                        @Html.TextBox("authorname")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Send" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Cancel", "gecis", "book")
+
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+
+
+    <p>
+
+    </p>
+</body>
+

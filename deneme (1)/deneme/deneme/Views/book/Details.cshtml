@@ -1,0 +1,66 @@
+﻿@model deneme.Models.book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.isbn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isbn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pageInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pageInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.library.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.library.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publishingHouse.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publishingHouse.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.barcodeNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

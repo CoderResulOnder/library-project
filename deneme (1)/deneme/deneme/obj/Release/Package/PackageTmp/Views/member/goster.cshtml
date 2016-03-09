@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "goster";
+}
+
+<h2>goster</h2>
+
+@model IEnumerable<deneme.Models.member>
+
+@{
+    ViewBag.Title = "Index";
+}
+<body style="background-color:black">
+    <h2 style="color :white">Member About Operations</h2>
+    
+    <table class="table" style="color:aqua">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telephoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address.doorNumber)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.job)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telephoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address.doorNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.memberNo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.memberNo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.memberNo })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
